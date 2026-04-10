@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Add Your Business – CityFind</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-logo">City<span>Find</span></a>
+  <div class="nav-links">
+    <a href="../listings/listings.html">Browse</a>
+    <a href="../map/map.html">Map View</a>
+    <a href="./register.html" class="nav-btn">List Free</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <h1>List your business for free</h1>
+  <p>Reach thousands of local customers every month. Setup takes just 5 minutes.</p>
+  <div class="perks">
+    <div class="perk"><span class="perk-icon">✅</span> 100% free basic listing</div>
+    <div class="perk"><span class="perk-icon">⚡</span> Live in under 24 hours</div>
+    <div class="perk"><span class="perk-icon">📊</span> Real-time visitor stats</div>
+    <div class="perk"><span class="perk-icon">📱</span> Mobile-friendly profile</div>
+  </div>
+</div>
+
+<div class="form-wrap">
+  <div class="stepper" id="stepper">
+    <div class="step"><div class="step-num active" id="sn1">1</div><div class="step-lbl active" id="sl1">Business info</div></div>
+    <div class="step-line"></div>
+    <div class="step"><div class="step-num todo" id="sn2">2</div><div class="step-lbl" id="sl2">Location & hours</div></div>
+    <div class="step-line"></div>
+    <div class="step"><div class="step-num todo" id="sn3">3</div><div class="step-lbl" id="sl3">Photos & plan</div></div>
+    <div class="step-line"></div>
+    <div class="step"><div class="step-num todo" id="sn4">4</div><div class="step-lbl" id="sl4">Review & submit</div></div>
+  </div>
+
+  <div class="form-card">
+    <!-- STEP 1 -->
+    <div class="form-section active" id="step1">
+      <div class="section-title">Business information</div>
+      <div class="section-sub">Tell us the basics about your business.</div>
+
+      <div class="form-row">
+        <label>Business name <span class="req">*</span></label>
+        <input type="text" id="bizName" placeholder="e.g. Sharma Medical Store" />
+      </div>
+      <div class="form-row">
+        <label>Category <span class="req">*</span></label>
+        <div class="cat-grid" id="catGrid">
+          <div class="cat-opt active" onclick="selCat(this,'food')"><div class="c-em">🍽️</div><div class="c-nm">Food & Dining</div></div>
+          <div class="cat-opt" onclick="selCat(this,'health')"><div class="c-em">🏥</div><div class="c-nm">Healthcare</div></div>
+          <div class="cat-opt" onclick="selCat(this,'edu')"><div class="c-em">🎓</div><div class="c-nm">Education</div></div>
+          <div class="cat-opt" onclick="selCat(this,'bank')"><div class="c-em">🏦</div><div class="c-nm">Banking</div></div>
+          <div class="cat-opt" onclick="selCat(this,'shop')"><div class="c-em">🛍️</div><div class="c-nm">Shopping</div></div>
+          <div class="cat-opt" onclick="selCat(this,'other')"><div class="c-em">➕</div><div class="c-nm">Other</div></div>
+        </div>
+      </div>
+      <div class="form-row">
+        <label>Short description <span class="req">*</span></label>
+        <textarea id="bizDesc" placeholder="Describe what your business offers in 2-3 sentences..."></textarea>
+      </div>
+      <div class="form-row-2">
+        <div>
+          <label>Phone number <span class="req">*</span></label>
+          <input type="tel" placeholder="+91 98765 43210" />
+        </div>
+        <div>
+          <label>Email address</label>
+          <input type="email" placeholder="you@yourbusiness.com" />
+        </div>
+      </div>
+      <div class="form-row">
+        <label>Website (optional)</label>
+        <input type="url" placeholder="https://www.yourbusiness.com" />
+      </div>
+      <div class="nav-btns">
+        <span></span>
+        <button class="btn btn-primary" onclick="goStep(2)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="form-section" id="step2">
+      <div class="section-title">Location & opening hours</div>
+      <div class="section-sub">Help customers find you.</div>
+      <div class="form-row">
+        <label>Street address <span class="req">*</span></label>
+        <input type="text" placeholder="e.g. 45, Main Road, Bistupur" />
+      </div>
+      <div class="form-row-2">
+        <div>
+          <label>Area / Locality</label>
+          <select>
+            <option>Select area</option>
+            <option>Bistupur</option>
+            <option>Sakchi</option>
+            <option>Telco</option>
+            <option>Jugsalai</option>
+            <option>Mango</option>
+            <option>Adityapur</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label>PIN code</label>
+          <input type="text" placeholder="831001" />
+        </div>
+      </div>
+      <div class="form-row">
+        <label>Open days</label>
+        <div class="days-grid">
+          <div class="day-btn active" onclick="this.classList.toggle('active')">Mon</div>
+          <div class="day-btn active" onclick="this.classList.toggle('active')">Tue</div>
+          <div class="day-btn active" onclick="this.classList.toggle('active')">Wed</div>
+          <div class="day-btn active" onclick="this.classList.toggle('active')">Thu</div>
+          <div class="day-btn active" onclick="this.classList.toggle('active')">Fri</div>
+          <div class="day-btn active" onclick="this.classList.toggle('active')">Sat</div>
+          <div class="day-btn" onclick="this.classList.toggle('active')">Sun</div>
+        </div>
+        <div class="hours-row">
+          <label>Opening:</label>
+          <input type="text" placeholder="9:00 AM" />
+          <label>Closing:</label>
+          <input type="text" placeholder="9:00 PM" />
+        </div>
+        <div class="hint">Click days to toggle. Leave times empty for 24-hour operation.</div>
+      </div>
+      <div class="nav-btns">
+        <button class="btn btn-outline" onclick="goStep(1)">← Back</button>
+        <button class="btn btn-primary" onclick="goStep(3)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="form-section" id="step3">
+      <div class="section-title">Photos & listing plan</div>
+      <div class="section-sub">Add photos and choose how you want to appear.</div>
+      <div class="form-row">
+        <label>Business photos</label>
+        <div class="photo-drop" onclick="triggerUpload()">
+          <div class="drop-icon">📷</div>
+          <div class="drop-lbl">Click to upload photos</div>
+          <div class="drop-sub">JPG, PNG up to 5MB each. Max 6 photos.</div>
+        </div>
+        <input type="file" id="photoInput" multiple accept="image/*" style="display:none" onchange="showPhotos(this)" />
+        <div id="photoPreview" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;"></div>
+      </div>
+      <div class="form-row">
+        <label>Choose your plan</label>
+        <div class="plan-cards">
+          <div class="plan-card active" onclick="selPlan(this)">
+            <span class="plan-badge free-badge">Free forever</span>
+            <div class="plan-name">Basic</div>
+            <div class="plan-price">₹0 <small>/month</small></div>
+            <div class="plan-features">
+              <div class="pf yes">✓ Listed in directory</div>
+              <div class="pf yes">✓ Contact info visible</div>
+              <div class="pf yes">✓ Receive reviews</div>
+              <div class="pf no">Featured placement</div>
+              <div class="pf no">Analytics dashboard</div>
+            </div>
+          </div>
+          <div class="plan-card" onclick="selPlan(this)">
+            <span class="plan-badge pro-badge">⭐ Premium</span>
+            <div class="plan-name">Pro</div>
+            <div class="plan-price">₹999 <small>/month</small></div>
+            <div class="plan-features">
+              <div class="pf yes">✓ Featured at top</div>
+              <div class="pf yes">✓ Verified badge</div>
+              <div class="pf yes">✓ Analytics dashboard</div>
+              <div class="pf yes">✓ Priority support</div>
+              <div class="pf yes">✓ Up to 6 photos</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-btns">
+        <button class="btn btn-outline" onclick="goStep(2)">← Back</button>
+        <button class="btn btn-primary" onclick="goStep(4)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="form-section" id="step4">
+      <div class="section-title">Review & submit</div>
+      <div class="section-sub">Check your details before publishing.</div>
+      <div style="background:var(--bg);border-radius:10px;padding:1.25rem;margin-bottom:1.25rem;">
+        <div id="reviewSummary" style="font-size:14px;line-height:2;"></div>
+      </div>
+      <div class="form-row">
+        <label>Your full name <span class="req">*</span></label>
+        <input type="text" placeholder="e.g. Rakesh Sharma" />
+      </div>
+      <div class="form-row">
+        <label>Your mobile (for verification) <span class="req">*</span></label>
+        <input type="tel" placeholder="+91 98765 43210" />
+      </div>
+      <div class="form-row">
+        <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-weight:400;">
+          <input type="checkbox" style="width:16px;height:16px;margin-top:2px;accent-color:var(--navy);flex-shrink:0;" />
+          <span>I confirm that the information provided is accurate and I am authorized to manage this business listing. I agree to the <a href="#" style="color:var(--blue)">Terms of Service</a> and <a href="#" style="color:var(--blue)">Privacy Policy</a>.</span>
+        </label>
+      </div>
+      <div class="nav-btns">
+        <button class="btn btn-outline" onclick="goStep(3)">← Back</button>
+        <button class="btn btn-primary" onclick="submitForm()">Submit listing 🎉</button>
+      </div>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="success-screen" id="successScreen">
+      <div class="success-icon">🎉</div>
+      <h2>You're submitted!</h2>
+      <p>Your listing is under review and will go live within 24 hours. We'll notify you by SMS once it's approved.</p>
+      <div class="success-actions">
+        <button class="btn btn-primary" onclick="location.href='../dashboard/dashboard.html'">Go to dashboard</button>
+        <button class="btn btn-outline" onclick="location.href='../index.html'">Back to home</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

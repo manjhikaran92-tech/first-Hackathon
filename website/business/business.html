@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Detail – CityFind</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav>
+    <a href="../index.html" class="nav-logo">City<span>Find</span></a>
+    <div class="nav-links">
+      <a href="../listings/listings.html">Browse</a>
+      <a href="../map/map.html">Map View</a>
+      <a href="../register/register.html">Add Business</a>
+      <a href="../register/register.html" class="nav-btn">List Free</a>
+    </div>
+  </nav>
+
+  <div class="biz-hero" id="bizHero">
+    <div class="biz-hero-inner">
+      <div class="biz-icon-big" id="bizIcon" style="background:#eaf3de">⏳</div>
+      <div class="biz-hero-info">
+        <div class="biz-hero-name" id="bizName">Loading...</div>
+        <div class="biz-hero-cat" id="bizCat"></div>
+        <div class="hero-meta">
+          <div class="rating-big">
+            <span class="stars-big" id="bizStars">★★★★★</span>
+            <span class="rating-num" id="bizRating">–</span>
+            <span class="review-link" id="bizReviewCount"></span>
+          </div>
+          <span class="status-badge" id="bizStatus"></span>
+          <span class="verified-badge" id="bizVerified" style="display:none">✓ Verified</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#" id="bizCallBtn" class="btn btn-white">📞 Call Now</a>
+          <a href="../map/map.html" class="btn btn-ghost">🗺 Get Directions</a>
+          <button class="btn btn-ghost" onclick="shareLink()">🔗 Share</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <!-- LEFT -->
+    <div>
+      <div class="card">
+        <div class="card-title">About this business</div>
+        <p class="desc-text" id="bizLongDesc">Loading details...</p>
+        <div class="tags-wrap" id="bizTags"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Opening hours</div>
+        <div id="bizHours">Loading hours...</div>
+      </div>
+
+      <div class="card" id="reviews">
+        <div class="card-title">Reviews</div>
+        <div class="r-summary">
+          <div>
+            <div class="r-big-num">4.6</div>
+            <div class="r-stars-big">★★★★★</div>
+            <div class="r-total">312 reviews</div>
+          </div>
+          <div class="r-bars">
+            <div class="r-bar-row"><span class="r-bar-lbl">5</span>
+              <div class="r-bar-track">
+                <div class="r-bar-fill" style="width:68%"></div>
+              </div><span class="r-bar-ct">213</span>
+            </div>
+            <div class="r-bar-row"><span class="r-bar-lbl">4</span>
+              <div class="r-bar-track">
+                <div class="r-bar-fill" style="width:20%"></div>
+              </div><span class="r-bar-ct">62</span>
+            </div>
+            <div class="r-bar-row"><span class="r-bar-lbl">3</span>
+              <div class="r-bar-track">
+                <div class="r-bar-fill" style="width:7%"></div>
+              </div><span class="r-bar-ct">22</span>
+            </div>
+            <div class="r-bar-row"><span class="r-bar-lbl">2</span>
+              <div class="r-bar-track">
+                <div class="r-bar-fill" style="width:3%"></div>
+              </div><span class="r-bar-ct">9</span>
+            </div>
+            <div class="r-bar-row"><span class="r-bar-lbl">1</span>
+              <div class="r-bar-track">
+                <div class="r-bar-fill" style="width:2%"></div>
+              </div><span class="r-bar-ct">6</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-list" id="reviewList">
+          <p style="color:var(--muted);padding:1rem 0">Loading reviews...</p>
+        </div>
+
+        <div class="write-review">
+          <div class="wr-title">Write a review</div>
+          <div class="star-pick" id="starPick">
+            <span onclick="pickStar(1)">☆</span><span onclick="pickStar(2)">☆</span>
+            <span onclick="pickStar(3)">☆</span><span onclick="pickStar(4)">☆</span><span onclick="pickStar(5)">☆</span>
+          </div>
+          <textarea class="wr-textarea" placeholder="Share your experience with this business..."></textarea>
+          <button class="wr-submit" onclick="submitReview()">Post review</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDEBAR -->
+    <div>
+      <div class="sidebar-card">
+        <div class="sc-title">Quick actions</div>
+        <div class="quick-actions">
+          <button class="qa-btn primary" id="qaCall">📞 Call</button>
+          <button class="qa-btn" onclick="location.href='../map/map.html'">🗺 Get directions</button>
+          <button class="qa-btn" id="qaEmail">✉️ Send email</button>
+          <button class="qa-btn" onclick="location.href='#reviews'">✏️ Write a review</button>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sc-title">Contact & Location</div>
+        <div class="map-placeholder" onclick="location.href='../map/map.html'">
+          <div class="map-icon">🗺</div>
+          <div class="map-label">Open in Map View</div>
+        </div>
+        <div class="contact-info" id="contactInfo">
+          <div class="contact-row">
+            <div class="c-icon">📍</div>
+            <div class="c-val">C Road, Bistupur, Jamshedpur 831001</div>
+          </div>
+          <div class="contact-row">
+            <div class="c-icon">📞</div>
+            <div class="c-val"><a href="tel:+916572345678">+91 657 234 5678</a></div>
+          </div>
+          <div class="contact-row">
+            <div class="c-icon">✉️</div>
+            <div class="c-val"><a href="mailto:info@tatahospital.in">info@tatahospital.in</a></div>
+          </div>
+          <div class="contact-row">
+            <div class="c-icon">🌐</div>
+            <div class="c-val"><a href="#">www.tatahospital.in</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sc-title">Nearby businesses</div>
+        <div class="nearby-list" id="nearbyList">Loading...</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

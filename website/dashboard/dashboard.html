@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Business Dashboard – CityFind</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="sb-logo"><a href="../index.html">City<span>Find</span></a></div>
+  <div class="sb-user">
+    <div class="sb-avatar">RS</div>
+    <div><div class="sb-user-name">Rakesh Sharma</div><div class="sb-user-role">Business Owner</div></div>
+  </div>
+  <nav class="sb-nav">
+    <div class="sb-section">Main</div>
+    <a href="#" class="sb-link active"><span class="sb-icon">📊</span> Dashboard</a>
+    <a href="#" class="sb-link"><span class="sb-icon">🏪</span> My Listing</a>
+    <a href="#" class="sb-link"><span class="sb-icon">⭐</span> Reviews</a>
+    <a href="#" class="sb-link"><span class="sb-icon">📸</span> Photos</a>
+    <div class="sb-section">Analytics</div>
+    <a href="#" class="sb-link"><span class="sb-icon">👁</span> Views & Clicks</a>
+    <a href="#" class="sb-link"><span class="sb-icon">📍</span> Direction requests</a>
+    <div class="sb-section">Account</div>
+    <a href="#" class="sb-link"><span class="sb-icon">⚙️</span> Settings</a>
+    <a href="../index.html" class="sb-link"><span class="sb-icon">🔗</span> View directory</a>
+  </nav>
+  <div class="sb-bottom">
+    <div class="sb-upgrade">
+      <p>Upgrade for featured placement & analytics</p>
+      <button>Upgrade to Pro ↗</button>
+    </div>
+  </div>
+</aside>
+
+<main class="main">
+  <div class="page-header">
+    <div>
+      <div class="page-title">Good morning, Rakesh 👋</div>
+      <div class="page-sub">Here's how your listing is performing this week</div>
+    </div>
+    <div class="header-actions">
+      <a href="../business/business.html" class="btn btn-outline">Preview listing</a>
+      <a href="#" class="btn btn-primary">Edit listing</a>
+    </div>
+  </div>
+
+  <!-- LISTING STATUS -->
+  <div class="card" style="margin-bottom:1.25rem;">
+    <div class="listing-status">
+      <div class="ls-icon">🏥</div>
+      <div class="ls-info">
+        <div class="ls-name">Tata Main Hospital</div>
+        <div class="ls-status status-live">● Live · Verified · Basic plan</div>
+      </div>
+      <a href="#" class="ls-action">Edit →</a>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <span style="font-size:12px;background:var(--blue-lt);color:#185fa5;padding:3px 12px;border-radius:20px;">Healthcare</span>
+      <span style="font-size:12px;background:#eaf3de;color:#3b6d11;padding:3px 12px;border-radius:20px;">Open now</span>
+      <span style="font-size:12px;background:#faeeda;color:#854f0b;padding:3px 12px;border-radius:20px;">⭐ 4.6 rating</span>
+      <span style="font-size:12px;background:var(--bg);color:var(--muted);padding:3px 12px;border-radius:20px;border:1px solid var(--border);">312 reviews</span>
+    </div>
+  </div>
+
+  <!-- METRICS -->
+  <div class="metrics">
+    <div class="metric-card">
+      <div class="m-label">Profile views (this week)</div>
+      <div class="m-value">1,248</div>
+      <div class="m-change up">↑ 12% vs last week</div>
+    </div>
+    <div class="metric-card">
+      <div class="m-label">Direction requests</div>
+      <div class="m-value">84</div>
+      <div class="m-change up">↑ 8% vs last week</div>
+    </div>
+    <div class="metric-card">
+      <div class="m-label">Phone taps</div>
+      <div class="m-value">37</div>
+      <div class="m-change down">↓ 3% vs last week</div>
+    </div>
+    <div class="metric-card">
+      <div class="m-label">New reviews</div>
+      <div class="m-value">6</div>
+      <div class="m-change up">↑ 2 new this week</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <!-- CHART -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Profile views – last 7 days</div>
+        <a href="#" class="card-link">Full report →</a>
+      </div>
+      <div class="chart-bar-area" id="chart">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    <!-- ACTIVITY -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Recent activity</div>
+      </div>
+      <div class="activity-list">
+        <div class="act-item"><div class="act-dot dot-blue"></div><div><div class="act-text">New review from <strong>Priya Singh</strong> — ★★★★☆</div><div class="act-time">2 hours ago</div></div></div>
+        <div class="act-item"><div class="act-dot dot-green"></div><div><div class="act-text">18 people requested directions to your business</div><div class="act-time">Today</div></div></div>
+        <div class="act-item"><div class="act-dot dot-amber"></div><div><div class="act-text">Your listing appeared in 342 searches</div><div class="act-time">Yesterday</div></div></div>
+        <div class="act-item"><div class="act-dot dot-blue"></div><div><div class="act-text">New review from <strong>Amit Mahato</strong> — ★★★★★</div><div class="act-time">2 days ago</div></div></div>
+        <div class="act-item"><div class="act-dot dot-green"></div><div><div class="act-text">Photo uploaded and approved</div><div class="act-time">3 days ago</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REVIEWS -->
+  <div class="card">
+    <div class="card-head">
+      <div class="card-title">Latest reviews</div>
+      <a href="#" class="card-link">View all 312 →</a>
+    </div>
+    <div class="review-list">
+      <div class="rv">
+        <div class="rv-head"><span class="rv-user">Priya Singh</span><span class="rv-stars">★★★★☆</span></div>
+        <div class="rv-text">Good hospital with well-trained doctors. Emergency department is very organized. Waiting time can be long during peak hours.</div>
+        <div class="rv-date">2 hours ago</div>
+        <div class="rv-reply"><button class="reply-btn" onclick="this.parentElement.innerHTML='<textarea style=\'width:100%;border:1px solid var(--border);border-radius:8px;padding:8px;font-size:13px;font-family:var(--font-body);margin-bottom:6px;\' placeholder=\'Write a reply...\'></textarea><button style=\'background:var(--navy);color:#fff;border:none;padding:6px 14px;border-radius:6px;font-size:12px;cursor:pointer;\'>Post reply</button>'">Reply to review</button></div>
+      </div>
+      <div class="rv">
+        <div class="rv-head"><span class="rv-user">Amit Mahato</span><span class="rv-stars">★★★★★</span></div>
+        <div class="rv-text">Best hospital in the city. The oncology department is world-class. Doctors are experienced and nursing staff is very attentive.</div>
+        <div class="rv-date">2 days ago</div>
+        <div class="rv-reply"><button class="reply-btn" onclick="this.parentElement.innerHTML='<textarea style=\'width:100%;border:1px solid var(--border);border-radius:8px;padding:8px;font-size:13px;font-family:var(--font-body);margin-bottom:6px;\' placeholder=\'Write a reply...\'></textarea><button style=\'background:var(--navy);color:#fff;border:none;padding:6px 14px;border-radius:6px;font-size:12px;cursor:pointer;\'>Post reply</button>'">Reply to review</button></div>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

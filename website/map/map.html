@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Map View – CityFind</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-logo">City<span>Find</span></a>
+  <div class="nav-links">
+    <a href="../listings/listings.html">List view</a>
+    <a href="../register/register.html" class="nav-btn">List Free</a>
+  </div>
+</nav>
+
+<div class="map-layout">
+  <div class="map-panel">
+    <div class="panel-search">
+      <input type="text" id="panelSearch" placeholder="Search on map..." oninput="filterList()" />
+    </div>
+    <div class="cat-chips">
+      <div class="chip active" onclick="filterChip(this,'all')">All</div>
+      <div class="chip" onclick="filterChip(this,'health')">🏥 Health</div>
+      <div class="chip" onclick="filterChip(this,'food')">🍽 Food</div>
+      <div class="chip" onclick="filterChip(this,'bank')">🏦 Bank</div>
+      <div class="chip" onclick="filterChip(this,'edu')">🎓 Edu</div>
+      <div class="chip" onclick="filterChip(this,'shop')">🛍 Shop</div>
+    </div>
+    <div class="panel-count" id="panelCount">Showing 6 businesses</div>
+    <div class="biz-list" id="panelList"></div>
+  </div>
+  <div id="map"></div>
+</div>
+
+<!-- POPUP INFO CARD -->
+<div class="info-card" id="infoCard">
+  <button class="ic-close" onclick="closeInfo()">✕</button>
+  <div class="ic-head">
+    <div class="ic-em" id="ic-em"></div>
+    <div><div class="ic-name" id="ic-name"></div><div class="ic-cat" id="ic-cat"></div></div>
+  </div>
+  <div class="ic-meta" id="ic-meta"></div>
+  <div class="ic-btns">
+    <a class="ic-btn primary" id="ic-details" href="#">View details</a>
+    <span class="ic-btn" onclick="closeInfo()">Close</span>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
