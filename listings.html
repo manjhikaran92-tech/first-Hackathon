@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Browse Listings – CityFind</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="listings.css" />
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">City<span>Find</span></a>
+  <div class="nav-links">
+    <a href="listings.html">Browse</a>
+    <a href="map.html">Map View</a>
+    <a href="register.html">Add Business</a>
+    <a href="register.html" class="nav-btn">List Free</a>
+  </div>
+</nav>
+
+<div class="search-bar">
+  <div class="search-inner">
+    <input type="text" placeholder="Search services, businesses..." id="searchQ" />
+    <select id="catSel" title="Select a category">
+      <option value="">All Categories</option>
+      <option value="food">Food & Dining</option>
+      <option value="health">Healthcare</option>
+      <option value="edu">Education</option>
+      <option value="bank">Banking</option>
+      <option value="shop">Shopping</option>
+      <option value="trans">Transport</option>
+      <option value="govt">Government</option>
+    </select>
+    <select id="areaSel" title="Select an area">
+      <option value="">All Areas</option>
+      <option>Bistupur</option>
+      <option>Sakchi</option>
+      <option>Telco</option>
+      <option>Jugsalai</option>
+      <option>Mango</option>
+    </select>
+    <button onclick="applySearch()">Search</button>
+  </div>
+</div>
+
+<div class="breadcrumb"><a href="index.html">Home</a> → Browse Listings</div>
+
+<div class="page-layout">
+  <aside class="sidebar">
+    <div class="sidebar-title">Filters <span class="clear-all" onclick="clearFilters()">Clear all</span></div>
+    <div class="filter-group">
+      <div class="filter-label">Category</div>
+      <div class="filter-check" id="catFilters">
+        <label class="f-opt"><input type="checkbox" value="food" onchange="applyFilters()" /> <span>Food & Dining</span> <span class="f-count">312</span></label>
+        <label class="f-opt"><input type="checkbox" value="health" onchange="applyFilters()" /> <span>Healthcare</span> <span class="f-count">145</span></label>
+        <label class="f-opt"><input type="checkbox" value="edu" onchange="applyFilters()" /> <span>Education</span> <span class="f-count">98</span></label>
+        <label class="f-opt"><input type="checkbox" value="bank" onchange="applyFilters()" /> <span>Banking</span> <span class="f-count">67</span></label>
+        <label class="f-opt"><input type="checkbox" value="shop" onchange="applyFilters()" /> <span>Shopping</span> <span class="f-count">220</span></label>
+        <label class="f-opt"><input type="checkbox" value="trans" onchange="applyFilters()" /> <span>Transport</span> <span class="f-count">89</span></label>
+      </div>
+    </div>
+    <div class="filter-group">
+      <div class="filter-label">Status</div>
+      <div class="filter-check">
+        <label class="f-opt"><input type="checkbox" id="openOnly" onchange="applyFilters()" /> <span>Open now</span></label>
+        <label class="f-opt"><input type="checkbox" id="verifiedOnly" onchange="applyFilters()" /> <span>Verified only</span></label>
+      </div>
+    </div>
+    <div class="filter-group">
+      <div class="filter-label">Minimum rating</div>
+      <div class="star-row" id="starFilters">
+        <button class="star-btn active" data-rating="0" onclick="setRating(this,0)">Any</button>
+        <button class="star-btn" data-rating="3" onclick="setRating(this,3)">3★+</button>
+        <button class="star-btn" data-rating="4" onclick="setRating(this,4)">4★+</button>
+        <button class="star-btn" data-rating="4.5" onclick="setRating(this,4.5)">4.5★+</button>
+      </div>
+    </div>
+    <div class="filter-group">
+      <div class="filter-label">Area</div>
+      <div class="filter-check">
+        <label class="f-opt"><input type="checkbox" value="Bistupur" onchange="applyFilters()" class="area-chk" /> <span>Bistupur</span></label>
+        <label class="f-opt"><input type="checkbox" value="Sakchi" onchange="applyFilters()" class="area-chk" /> <span>Sakchi</span></label>
+        <label class="f-opt"><input type="checkbox" value="Telco" onchange="applyFilters()" class="area-chk" /> <span>Telco</span></label>
+        <label class="f-opt"><input type="checkbox" value="Jugsalai" onchange="applyFilters()" class="area-chk" /> <span>Jugsalai</span></label>
+        <label class="f-opt"><input type="checkbox" value="Mango" onchange="applyFilters()" class="area-chk" /> <span>Mango</span></label>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <div class="listings-top">
+      <div class="res-info">Showing <strong id="resCount">10</strong> businesses</div>
+      <div class="sort-row">
+        <span class="sort-lbl">Sort:</span>
+        <select class="sort-sel" onchange="applyFilters()" title="Sort listings by">
+          <option value="rating">Top rated</option>
+          <option value="name">Name A-Z</option>
+          <option value="reviews">Most reviewed</option>
+          <option value="new">Newest</option>
+        </select>
+      </div>
+    </div>
+    <div class="biz-list" id="bizList"></div>
+    <div class="pagination">
+      <button class="pg-btn active">1</button>
+      <button class="pg-btn">2</button>
+      <button class="pg-btn">3</button>
+      <button class="pg-btn">→</button>
+    </div>
+  </main>
+</div>
+
+<script src="listings.js"></script>
+</body>
+</html>
