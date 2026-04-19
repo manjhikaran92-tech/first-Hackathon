@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Detail – CityFind</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="business.css">
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">City<span>Find</span></a>
+  <div class="nav-links">
+    <a href="listings.html">Browse</a>
+    <a href="map.html">Map View</a>
+    <a href="register.html">Add Business</a>
+    <a href="register.html" class="nav-btn">List Free</a>
+  </div>
+</nav>
+
+<div class="biz-hero">
+  <div class="biz-hero-inner">
+    <div class="biz-icon-big" style="background:#eaf3de">🏥</div>
+    <div class="biz-hero-info">
+      <div class="biz-hero-name">Tata Main Hospital</div>
+      <div class="biz-hero-cat">Healthcare · Bistupur, Jamshedpur</div>
+      <div class="hero-meta">
+        <div class="rating-big">
+          <span class="stars-big">★★★★★</span>
+          <span class="rating-num">4.6</span>
+          <span class="review-link">(312 reviews)</span>
+        </div>
+        <span class="status-badge open">Open Now</span>
+        <span class="verified-badge">✓ Verified</span>
+      </div>
+      <div class="hero-actions">
+        <a href="tel:+916572345678" class="btn btn-white">📞 Call Now</a>
+        <a href="map.html" class="btn btn-ghost">🗺 Get Directions</a>
+        <button class="btn btn-ghost" onclick="shareLink()">🔗 Share</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <div>
+    <div class="card">
+      <div class="card-title">About this business</div>
+      <p class="desc-text">Tata Main Hospital is Jamshedpur's premier multi-specialty medical facility, established in 1917. It serves as the primary healthcare provider for the region with over 850 beds and more than 40 specialized departments including Cardiology, Oncology, Neurology, Orthopedics, and Pediatrics.</p>
+      <br/>
+      <p class="desc-text">The hospital offers 24/7 emergency services, a dedicated ICU, advanced diagnostic imaging, and a blood bank. It is widely recognized for its patient-centric approach and modern medical infrastructure.</p>
+      <div class="tags-wrap">
+        <span class="tag-pill">Emergency Care</span>
+        <span class="tag-pill">ICU</span>
+        <span class="tag-pill">Cardiology</span>
+        <span class="tag-pill">Oncology</span>
+        <span class="tag-pill">Pediatrics</span>
+        <span class="tag-pill">Blood Bank</span>
+        <span class="tag-pill">Pharmacy</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Opening hours</div>
+      <div class="hour-row today"><span class="day">Monday (Today)</span><span class="time">Open 24 hours</span></div>
+      <div class="hour-row"><span class="day">Tuesday</span><span class="time">Open 24 hours</span></div>
+      <div class="hour-row"><span class="day">Wednesday</span><span class="time">Open 24 hours</span></div>
+      <div class="hour-row"><span class="day">Thursday</span><span class="time">Open 24 hours</span></div>
+      <div class="hour-row"><span class="day">Friday</span><span class="time">Open 24 hours</span></div>
+      <div class="hour-row"><span class="day">Saturday</span><span class="time">Open 24 hours</span></div>
+      <div class="hour-row"><span class="day">Sunday</span><span class="time">Open 24 hours</span></div>
+    </div>
+
+    <div class="card" id="reviews">
+      <div class="card-title">Reviews</div>
+      <div class="r-summary">
+        <div>
+          <div class="r-big-num">4.6</div>
+          <div class="r-stars-big">★★★★★</div>
+          <div class="r-total">312 reviews</div>
+        </div>
+        <div class="r-bars">
+          <div class="r-bar-row"><span class="r-bar-lbl">5</span><div class="r-bar-track"><div class="r-bar-fill" style="width:68%"></div></div><span class="r-bar-ct">213</span></div>
+          <div class="r-bar-row"><span class="r-bar-lbl">4</span><div class="r-bar-track"><div class="r-bar-fill" style="width:20%"></div></div><span class="r-bar-ct">62</span></div>
+          <div class="r-bar-row"><span class="r-bar-lbl">3</span><div class="r-bar-track"><div class="r-bar-fill" style="width:7%"></div></div><span class="r-bar-ct">22</span></div>
+          <div class="r-bar-row"><span class="r-bar-lbl">2</span><div class="r-bar-track"><div class="r-bar-fill" style="width:3%"></div></div><span class="r-bar-ct">9</span></div>
+          <div class="r-bar-row"><span class="r-bar-lbl">1</span><div class="r-bar-track"><div class="r-bar-fill" style="width:2%"></div></div><span class="r-bar-ct">6</span></div>
+        </div>
+      </div>
+      <div class="review-list">
+        <div class="review-card">
+          <div class="rv-top">
+            <div class="rv-user"><div class="rv-avatar" style="background:#378add">RK</div><div><div class="rv-name">Rahul Kumar</div><div class="rv-date">March 2024</div></div></div>
+            <span class="rv-stars">★★★★★</span>
+          </div>
+          <p class="rv-text">Excellent facilities and very professional staff. My father was admitted for cardiac surgery and the entire team from admission to discharge was extremely helpful and caring. Highly recommend.</p>
+        </div>
+        <div class="review-card">
+          <div class="rv-top">
+            <div class="rv-user"><div class="rv-avatar" style="background:#1d9e75">PS</div><div><div class="rv-name">Priya Singh</div><div class="rv-date">February 2024</div></div></div>
+            <span class="rv-stars">★★★★☆</span>
+          </div>
+          <p class="rv-text">Good hospital with well-trained doctors. The emergency department is well-organized. Waiting time can be long during peak hours but overall experience was positive. Clean and hygienic environment.</p>
+        </div>
+        <div class="review-card">
+          <div class="rv-top">
+            <div class="rv-user"><div class="rv-avatar" style="background:#ef9f27">AM</div><div><div class="rv-name">Amit Mahato</div><div class="rv-date">January 2024</div></div></div>
+            <span class="rv-stars">★★★★★</span>
+          </div>
+          <p class="rv-text">Best hospital in the city. The oncology department especially is world-class. The doctors are experienced and the nursing staff is very kind and attentive.</p>
+        </div>
+      </div>
+
+      <div class="write-review">
+        <div class="wr-title">Write a review</div>
+        <div class="star-pick" id="starPick">
+          <span onclick="pickStar(1)">☆</span><span onclick="pickStar(2)">☆</span>
+          <span onclick="pickStar(3)">☆</span><span onclick="pickStar(4)">☆</span><span onclick="pickStar(5)">☆</span>
+        </div>
+        <textarea class="wr-textarea" placeholder="Share your experience with this business..."></textarea>
+        <button class="wr-submit" onclick="submitReview()">Post review</button>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="sidebar-card">
+      <div class="sc-title">Quick actions</div>
+      <div class="quick-actions">
+        <button class="qa-btn primary" onclick="location.href='tel:+916572345678'">📞 Call: +91 657 234 5678</button>
+        <button class="qa-btn" onclick="location.href='map.html'">🗺 Get directions</button>
+        <button class="qa-btn" onclick="location.href='mailto:info@tatahospital.in'">✉️ Send email</button>
+        <button class="qa-btn" onclick="location.href='#reviews'">✏️ Write a review</button>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sc-title">Contact & Location</div>
+      <div class="map-placeholder" onclick="location.href='map.html'">
+        <div class="map-icon">🗺</div>
+        <div class="map-label">Open in Map View</div>
+      </div>
+      <div class="contact-info">
+        <div class="contact-row"><div class="c-icon">📍</div><div class="c-val">C Road, Bistupur, Jamshedpur 831001</div></div>
+        <div class="contact-row"><div class="c-icon">📞</div><div class="c-val"><a href="tel:+916572345678">+91 657 234 5678</a></div></div>
+        <div class="contact-row"><div class="c-icon">✉️</div><div class="c-val"><a href="mailto:info@tatahospital.in">info@tatahospital.in</a></div></div>
+        <div class="contact-row"><div class="c-icon">🌐</div><div class="c-val"><a href="#">www.tatahospital.in</a></div></div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sc-title">Nearby businesses</div>
+      <div class="nearby-list">
+        <a href="business.html" class="nb-card"><div class="nb-icon" style="background:#e6f1fb">🏥</div><div class="nb-info"><div class="nb-name">Apollo Clinic</div><div class="nb-r">★ 4.5 · 0.8 km</div></div></a>
+        <a href="business.html" class="nb-card"><div class="nb-icon" style="background:#e6f1fb">💊</div><div class="nb-info"><div class="nb-name">MedPlus Pharmacy</div><div class="nb-r">★ 4.2 · 0.3 km</div></div></a>
+        <a href="business.html" class="nb-card"><div class="nb-icon" style="background:#faeeda">🍽️</div><div class="nb-info"><div class="nb-name">Café Coffee Day</div><div class="nb-r">★ 4.0 · 0.4 km</div></div></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="business.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CityFind – Discover Local Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="index.css" />
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">City<span>Find</span></a>
+  <div class="nav-links">
+    <a href="listings.html">Browse</a>
+    <a href="map.html">Map View</a>
+    <a href="register.html">Add Business</a>
+    <a href="register.html" class="nav-btn">List Free</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">🏙 Jamshedpur City Directory</div>
+  <h1>Find every service<br><span>in your city</span></h1>
+  <p>Search 1,240+ verified local businesses, hospitals, schools, and government offices.</p>
+  <div class="search-box">
+    <input type="text" placeholder="Search hospitals, restaurants, banks..." id="heroSearch" />
+    <select aria-label="Select area">
+      <option>All Areas</option>
+      <option>Bistupur</option>
+      <option>Sakchi</option>
+      <option>Telco</option>
+      <option>Jugsalai</option>
+      <option>Mango</option>
+    </select>
+    <button onclick="goSearch()">Search</button>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">1,240+</div><div class="lbl">Businesses</div></div>
+    <div class="hero-stat"><div class="num">24</div><div class="lbl">Categories</div></div>
+    <div class="hero-stat"><div class="num">18K</div><div class="lbl">Monthly visitors</div></div>
+    <div class="hero-stat"><div class="num">4.6★</div><div class="lbl">Avg rating</div></div>
+  </div>
+</section>
+
+<div class="section">
+  <div class="section-header">
+    <h2 class="section-title">Browse by category</h2>
+    <a href="listings.html" class="section-link">View all →</a>
+  </div>
+  <div class="cats-grid">
+    <a href="listings.html?cat=food" class="cat-card"><div class="cat-emoji">🍽️</div><div class="cat-name">Food & Dining</div><div class="cat-count">312 places</div></a>
+    <a href="listings.html?cat=health" class="cat-card"><div class="cat-emoji">🏥</div><div class="cat-name">Healthcare</div><div class="cat-count">145 places</div></a>
+    <a href="listings.html?cat=edu" class="cat-card"><div class="cat-emoji">🎓</div><div class="cat-name">Education</div><div class="cat-count">98 places</div></a>
+    <a href="listings.html?cat=bank" class="cat-card"><div class="cat-emoji">🏦</div><div class="cat-name">Banking</div><div class="cat-count">67 places</div></a>
+    <a href="listings.html?cat=shop" class="cat-card"><div class="cat-emoji">🛍️</div><div class="cat-name">Shopping</div><div class="cat-count">220 places</div></a>
+    <a href="listings.html?cat=trans" class="cat-card"><div class="cat-emoji">🚗</div><div class="cat-name">Transport</div><div class="cat-count">89 places</div></a>
+    <a href="listings.html?cat=govt" class="cat-card"><div class="cat-emoji">🏛️</div><div class="cat-name">Government</div><div class="cat-count">54 places</div></a>
+    <a href="listings.html?cat=hotel" class="cat-card"><div class="cat-emoji">🏨</div><div class="cat-name">Hotels</div><div class="cat-count">38 places</div></a>
+    <a href="listings.html?cat=salon" class="cat-card"><div class="cat-emoji">✂️</div><div class="cat-name">Salons & Spa</div><div class="cat-count">76 places</div></a>
+    <a href="listings.html?cat=legal" class="cat-card"><div class="cat-emoji">⚖️</div><div class="cat-name">Legal</div><div class="cat-count">29 places</div></a>
+    <a href="listings.html?cat=it" class="cat-card"><div class="cat-emoji">💻</div><div class="cat-name">IT & Tech</div><div class="cat-count">43 places</div></a>
+    <a href="listings.html" class="cat-card"><div class="cat-emoji">➕</div><div class="cat-name">More...</div><div class="cat-count">24 total</div></a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">
+    <h2 class="section-title">Featured businesses</h2>
+    <a href="listings.html" class="section-link">See all →</a>
+  </div>
+  <div class="tag-filters">
+    <span class="tag active" data-tag="all" onclick="filterTag(this,'all')">All</span>
+    <span class="tag" data-tag="food" onclick="filterTag(this,'food')">Food</span>
+    <span class="tag" data-tag="health" onclick="filterTag(this,'health')">Health</span>
+    <span class="tag" data-tag="edu" onclick="filterTag(this,'edu')">Education</span>
+    <span class="tag" data-tag="bank" onclick="filterTag(this,'bank')">Banking</span>
+    <span class="tag" data-tag="shop" onclick="filterTag(this,'shop')">Shopping</span>
+  </div>
+  <div class="biz-grid" id="bizGrid"></div>
+</div>
+
+<div class="section">
+  <div class="cta-banner">
+    <div class="cta-text">
+      <h2>Own a business in Jamshedpur?</h2>
+      <p>Create your free listing in 5 minutes and reach thousands of local customers every month.</p>
+    </div>
+    <div class="cta-btns">
+      <button class="btn-white" onclick="location.href='register.html'">List my business free</button>
+      <button class="btn-ghost" onclick="location.href='listings.html'">Browse directory</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">City<span>Find</span></div>
+      <p class="footer-desc">Connecting Jamshedpur residents with local businesses and services since 2024. Discover, review, and support your city.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="listings.html">All Listings</a>
+      <a href="map.html">Map View</a>
+      <a href="listings.html?filter=top">Top Rated</a>
+      <a href="listings.html?filter=new">New Listings</a>
+    </div>
+    <div class="footer-col">
+      <h4>Business</h4>
+      <a href="register.html">Add Listing</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="#">Advertising</a>
+      <a href="#">Claim Listing</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2024 CityFind Jamshedpur. All rights reserved.</div>
+</footer>
+
+<script src="index.js"></script>
+</body>
+</html>
