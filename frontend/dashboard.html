@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Dashboard – CityFind</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+<aside class="sidebar">
+  <div class="sb-logo"><a href="index.html">City<span>Find</span></a></div>
+  <div class="sb-user">
+    <div class="sb-avatar" id="userAvatar">KM</div>
+    <div>
+      <div class="sb-user-name" id="userName">Karan Kumar Manjhi</div>
+      <div class="sb-user-role" id="userRole">Business Owner</div>
+    </div>
+  </div>
+  <nav class="sb-nav">
+    <div class="sb-section">Main</div>
+    <a href="#" class="sb-link active"><span class="sb-icon">📊</span> Dashboard</a>
+    <a href="#" class="sb-link"><span class="sb-icon">🏪</span> My Listing</a>
+    <a href="#" class="sb-link"><span class="sb-icon">⭐</span> Reviews</a>
+    <a href="#" class="sb-link"><span class="sb-icon">📸</span> Photos</a>
+    <div class="sb-section">Analytics</div>
+    <a href="#" class="sb-link"><span class="sb-icon">👁</span> Views & Clicks</a>
+    <a href="#" class="sb-link"><span class="sb-icon">📍</span> Direction requests</a>
+    <div class="sb-section">Account</div>
+    <a href="#" class="sb-link"><span class="sb-icon">⚙️</span> Settings</a>
+    <a href="index.html" class="sb-link"><span class="sb-icon">🔗</span> View directory</a>
+  </nav>
+  <div class="sb-bottom">
+    <div class="sb-upgrade">
+      <p>Upgrade for featured placement & analytics</p>
+      <button>Upgrade to Pro ↗</button>
+    </div>
+    <button onclick="logout()" class="sb-logout">
+  🚪 Logout
+</button>
+  </div>
+</aside>
+
+<main class="main">
+  <div class="page-header">
+    <div>
+      <div class="page-title">Hello, <span id="greetName">Karan</span> 👋</div>
+      <div class="page-sub">Here's how your listing is performing this week</div>
+    </div>
+    <div class="header-actions">
+      <a href="business.html" class="btn btn-outline">Preview listing</a>
+      <a href="#" class="btn btn-primary">Edit listing</a>
+    </div>
+  </div>
+
+  <div class="card listing-card">
+    <div class="listing-status">
+      <div class="ls-icon">🏥</div>
+      <div class="ls-info">
+        <div class="ls-name">Tata Main Hospital</div>
+        <div class="ls-status status-live">● Live · Verified · Basic plan</div>
+      </div>
+      <a href="#" class="ls-action">Edit →</a>
+    </div>
+    <div class="tags-list">
+      <span class="tag tag-healthcare">Healthcare</span>
+      <span class="tag tag-open">Open now</span>
+      <span class="tag tag-rating">⭐ 4.6 rating</span>
+      <span class="tag tag-reviews">312 reviews</span>
+    </div>
+  </div>
+
+  <div class="metrics">
+    <div class="metric-card">
+      <div class="m-label">Profile views (this week)</div>
+      <div class="m-value" id="totalViews">1,248</div>
+      <div class="m-change up">↑ 12% vs last week</div>
+    </div>
+    <div class="metric-card">
+      <div class="m-label">Direction requests</div>
+      <div class="m-value">84</div>
+      <div class="m-change up">↑ 8% vs last week</div>
+    </div>
+    <div class="metric-card">
+      <div class="m-label">Phone taps</div>
+      <div class="m-value">37</div>
+      <div class="m-change down">↓ 3% vs last week</div>
+    </div>
+    <div class="metric-card">
+      <div class="m-label">New reviews</div>
+      <div class="m-value" id="totalReviews">6</div>
+      <div class="m-change up">↑ 2 new this week</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Profile views – last 7 days</div>
+        <a href="#" class="card-link">Full report →</a>
+      </div>
+      <div class="chart-bar-area" id="chart"></div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Recent activity</div>
+      </div>
+      <div class="activity-list">
+        <div class="act-item"><div class="act-dot dot-blue"></div><div><div class="act-text">New review from <strong>Priya Singh</strong> — ★★★★☆</div><div class="act-time">2 hours ago</div></div></div>
+        <div class="act-item"><div class="act-dot dot-green"></div><div><div class="act-text">18 people requested directions to your business</div><div class="act-time">Today</div></div></div>
+        <div class="act-item"><div class="act-dot dot-amber"></div><div><div class="act-text">Your listing appeared in 342 searches</div><div class="act-time">Yesterday</div></div></div>
+        <div class="act-item"><div class="act-dot dot-blue"></div><div><div class="act-text">New review from <strong>Amit Mahato</strong> — ★★★★★</div><div class="act-time">2 days ago</div></div></div>
+        <div class="act-item"><div class="act-dot dot-green"></div><div><div class="act-text">Photo uploaded and approved</div><div class="act-time">3 days ago</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-title">Latest reviews</div>
+      <a href="#" class="card-link">View all →</a>
+    </div>
+    <div class="review-list" id="myReviews">
+      <div class="rv">
+        <div class="rv-head"><span class="rv-user">Priya Singh</span><span class="rv-stars">★★★★☆</span></div>
+        <div class="rv-text">Good hospital with well-trained doctors. Emergency department is very organized.</div>
+        <div class="rv-date">2 hours ago</div>
+        <div class="rv-reply"><button class="reply-btn" onclick="replyToReview(this)">Reply to review</button></div>
+      </div>
+      <div class="rv">
+        <div class="rv-head"><span class="rv-user">Amit Mahato</span><span class="rv-stars">★★★★★</span></div>
+        <div class="rv-text">Best hospital in the city. The oncology department is world-class.</div>
+        <div class="rv-date">2 days ago</div>
+        <div class="rv-reply"><button class="reply-btn" onclick="replyToReview(this)">Reply to review</button></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

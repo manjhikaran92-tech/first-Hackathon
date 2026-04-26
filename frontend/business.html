@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Detail – CityFind</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="business.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">City<span>Find</span></a>
+  <div class="nav-links">
+    <a href="listings.html">Browse</a>
+    <a href="map.html">Map View</a>
+    <a href="register.html">Add Business</a>
+    <a href="register.html" class="nav-btn">List Free</a>
+  </div>
+</nav>
+
+<div class="biz-hero">
+  <div class="biz-hero-inner">
+    <div class="biz-icon-big" id="bizIcon">🏢</div>
+    <div class="biz-hero-info">
+      <div class="biz-hero-name" id="bizName">Loading...</div>
+      <div class="biz-hero-cat" id="bizCat">Loading...</div>
+      <div class="hero-meta">
+        <div class="rating-big">
+          <span class="stars-big" id="bizStars">☆☆☆☆☆</span>
+          <span class="rating-num" id="bizRating">0.0</span>
+          <span class="review-link" id="bizReviewCt">(0 reviews)</span>
+        </div>
+        <span class="status-badge" id="bizStatus">Loading...</span>
+        <span class="verified-badge" id="bizVerified">✓ Verified</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#" class="btn btn-white" id="bizPhone">📞 Call Now</a>
+        <a href="map.html" class="btn btn-ghost">🗺 Get Directions</a>
+        <button class="btn btn-ghost" onclick="shareLink()">🔗 Share</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <div>
+
+    <div class="card" id="bizImages"></div>
+
+    <div class="card">
+      <div class="card-title">About this business</div>
+      <p class="desc-text" id="bizDesc">Loading...</p>
+      <div class="tags-wrap" id="bizTags"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Opening hours</div>
+      <div id="bizHours">Loading...</div>
+    </div>
+
+    <div class="card" id="reviews">
+      <div class="card-title">Reviews</div>
+      <div id="reviewsList">Loading...</div>
+      <div class="write-review">
+        <div class="wr-title">Write a review</div>
+        <div class="star-pick" id="starPick">
+          <span onclick="pickStar(1)">☆</span>
+          <span onclick="pickStar(2)">☆</span>
+          <span onclick="pickStar(3)">☆</span>
+          <span onclick="pickStar(4)">☆</span>
+          <span onclick="pickStar(5)">☆</span>
+        </div>
+        <textarea class="wr-textarea" placeholder="Share your experience..."></textarea>
+        <button class="wr-submit" onclick="submitReview()">Post review</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div>
+    <div class="sidebar-card">
+      <div class="sc-title">Quick actions</div>
+      <div class="quick-actions">
+        <button class="qa-btn primary" id="bizCallBtn">📞 Call Now</button>
+        <button class="qa-btn" onclick="location.href='map.html'">🗺 Get directions</button>
+        <button class="qa-btn" id="bizEmailBtn">✉️ Send email</button>
+        <button class="qa-btn" onclick="location.href='#reviews'">✏️ Write a review</button>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sc-title">Contact & Location</div>
+      <div class="map-placeholder" onclick="location.href='map.html'">
+        <div class="map-icon">🗺</div>
+        <div class="map-label">Open in Map View</div>
+      </div>
+      <div class="contact-info">
+        <div class="contact-row">
+          <div class="c-icon">📍</div>
+          <div class="c-val" id="bizAddr">Loading...</div>
+        </div>
+        <div class="contact-row">
+          <div class="c-icon">📞</div>
+          <div class="c-val"><a href="#" id="bizPhoneLink">Loading...</a></div>
+        </div>
+        <div class="contact-row">
+          <div class="c-icon">✉️</div>
+          <div class="c-val"><a href="#" id="bizEmail">-</a></div>
+        </div>
+        <div class="contact-row">
+          <div class="c-icon">🌐</div>
+          <div class="c-val"><a href="#" id="bizWebsite" target="_blank">-</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sc-title">Nearby businesses</div>
+      <div class="nearby-list">
+        <a href="listings.html" class="nb-card">
+          <div class="nb-icon">🏢</div>
+          <div class="nb-info">
+            <div class="nb-name">Browse more businesses</div>
+            <div class="nb-r">View all listings</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="business.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login – CityFind</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'DM Sans',sans-serif; background:#f5f7fa; display:flex; align-items:center; justify-content:center; min-height:100vh; }
+  .login-box { background:#fff; border-radius:16px; padding:2.5rem; width:100%; max-width:420px; box-shadow:0 4px 24px rgba(0,0,0,0.08); }
+  .logo { font-family:'Syne',sans-serif; font-size:1.8rem; font-weight:800; color:#0a2540; margin-bottom:0.5rem; }
+  .logo span { color:#ef9f27; }
+  .subtitle { color:#666; margin-bottom:2rem; font-size:0.95rem; }
+  .tabs { display:flex; gap:0; margin-bottom:2rem; border:1px solid #e0e0e0; border-radius:8px; overflow:hidden; }
+  .tab { flex:1; padding:10px; text-align:center; cursor:pointer; font-weight:500; font-size:0.9rem; background:#f5f7fa; color:#666; border:none; }
+  .tab.active { background:#0a2540; color:#fff; }
+  .form-group { margin-bottom:1.2rem; }
+  label { display:block; font-size:0.85rem; font-weight:500; color:#333; margin-bottom:6px; }
+  input { width:100%; padding:12px 14px; border:1px solid #e0e0e0; border-radius:8px; font-size:0.95rem; font-family:'DM Sans',sans-serif; outline:none; transition:border 0.2s; }
+  input:focus { border-color:#0a2540; }
+  .btn-submit { width:100%; padding:13px; background:#0a2540; color:#fff; border:none; border-radius:8px; font-size:1rem; font-weight:600; cursor:pointer; margin-top:0.5rem; font-family:'Syne',sans-serif; }
+  .btn-submit:hover { background:#1a3a60; }
+  .error-msg { background:#fee2e2; color:#dc2626; padding:10px 14px; border-radius:8px; font-size:0.9rem; margin-bottom:1rem; display:none; }
+  .success-msg { background:#dcfce7; color:#16a34a; padding:10px 14px; border-radius:8px; font-size:0.9rem; margin-bottom:1rem; display:none; }
+  .back-link { text-align:center; margin-top:1.5rem; font-size:0.9rem; color:#666; }
+  .back-link a { color:#0a2540; font-weight:600; text-decoration:none; }
+</style>
+</head>
+<body>
+
+<div class="login-box">
+  <div class="logo">City<span>Find</span></div>
+  <div class="subtitle">Jamshedpur City Directory</div>
+
+  <div class="tabs">
+    <button class="tab active" id="loginTab" onclick="switchTab('login')">Login</button>
+    <button class="tab" id="registerTab" onclick="switchTab('register')">Register</button>
+  </div>
+
+  <div class="error-msg" id="errorMsg"></div>
+  <div class="success-msg" id="successMsg"></div>
+
+  <!-- LOGIN FORM -->
+  <div id="loginForm">
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" id="loginEmail" placeholder="your@email.com">
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" id="loginPassword" placeholder="Enter password">
+    </div>
+    <button class="btn-submit" onclick="handleLogin()">Login</button>
+  </div>
+
+  <!-- REGISTER FORM -->
+  <div id="registerForm" style="display:none">
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" id="regName" placeholder="Your name">
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" id="regEmail" placeholder="your@email.com">
+    </div>
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="tel" id="regPhone" placeholder="10 digit number">
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" id="regPassword" placeholder="Min 6 characters">
+    </div>
+    <button class="btn-submit" onclick="handleRegister()">Create Account</button>
+  </div>
+
+  <div class="back-link">
+    <a href="index.html">← Back to Home</a>
+  </div>
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>
