@@ -7,7 +7,6 @@ const rateLimit = require('express-rate-limit');
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
-
 const authRoutes = require('./routes/auth');
 const businessRoutes = require('./routes/businesses');
 const userRoutes = require('./routes/users');
